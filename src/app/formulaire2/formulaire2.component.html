@@ -1,0 +1,132 @@
+<style>
+  p {
+    color: grey;
+    background-color: blanchedalmond;
+    text-align: center;
+    font: italic small-caps bolder 16px/3 cursive;
+  }
+
+  button {
+    font: italic small-caps bolder 16px/3 cursive;
+    background-color: whitesmoke;
+    cursor: pointer;
+    transition: all 1s;
+  }
+
+  button:hover {
+    transform: scale(1.1);
+  }
+
+  li {
+    font: italic small-caps bolder 16px/3 cursive;
+  }
+
+
+</style>
+<div>
+  <ul>
+    <li> <app-formulaire> </app-formulaire> </li>
+    <li> <app-formulaire> </app-formulaire> </li>
+    <li> <app-formulaire> </app-formulaire> </li>
+  </ul>
+  <h3> Bonjour</h3>
+  <p> il y a {{etudiant}} élèves </p>
+  <p> le directeur se nomme : {{dir.prenom}}</p>
+  <p> l'utilisateur se nomme : {{user.name}}</p>
+  <h1 (click)="afficheMessage('coucou')">Bonjour</h1>
+  <button (click)="afficheMessage('coucou');">Click me</button>
+</div>
+
+
+<div (click)="afficheMessage2('parent',$event)"> <i>Message parent</i> <br> <br> <br>
+  <span (click)="afficheMessage2('enfant',$event)"> <i> Message enfant </i> </span>
+</div>
+
+
+<ul *ngIf="1 > 0">
+  <li>HEy</li>
+  <li>CodE AscI</li>
+  <li>HeLLo</li>
+  <li>KiKOU</li>
+</ul>
+
+<ul>
+  <li *ngFor="let valeur of quantites">{{valeur}}</li>
+</ul>
+
+<ul>
+  <li *ngFor="let user of userList">{{ "[ " + user. id + "," + user.name + "," + user.email+ " ]"}}</li>
+  <li *ngFor="let user of userList"> {{user | json}}</li>
+</ul>
+
+
+<!-- <ul *ngFor="let elt of data">
+
+  <li> {{elt.id + " " + elt.name + " " + elt.address.streetName + " " + elt.address.streetId}} </li>
+
+  <ul *ngFor="let i of elt.projets">
+
+    <li> {{i.libelle + " " + i.description }} </li>
+
+  </ul>
+
+
+
+
+</ul> -->
+
+<br>
+
+<ol *ngFor="let obj of data ">
+  <li> {{ obj.id }} </li>
+  <li> {{ obj.name }} </li>
+  <li> {{obj.address.streetName }} </li>
+  <li> {{obj.address.streetId }} </li>
+  <ul *ngFor="let val of obj.projets ">
+      <li> {{val.libelle}} </li>
+      <li> {{val.description}} </li>
+  </ul>
+</ol>
+
+
+<br/>
+
+
+
+<ul>
+    <ng-container *ngFor="let user of userList">
+        <li *ngIf="user.id! % 2 == 0; then si else sinon">
+            msg non affiche </li>
+        <ng-template #si>
+            <li>{{user.id}} est pair</li>
+        </ng-template>
+        <ng-template #sinon>
+            <li>{{user.id}} est impair</li>
+        </ng-template>
+    </ng-container>
+</ul>
+
+
+<div [ngSwitch]="position">
+
+  <p *ngSwitchCase="1">Premier</p>
+  <p *ngSwitchCase="2">Second</p>
+  <p *ngSwitchCase="3">Pas dans les premiers</p>
+  
+
+</div>
+
+
+<div [ngClass]="{'mycolor1': true}">
+  div avec des classes dynamiques
+  </div>
+
+<ul *ngFor= "let user of userList" >
+  <li [ngClass]="user.id! % 2 == 0 ? 'mycolor1' : 'mycolor2'"> {{user | json}} </li>
+
+
+  
+</ul>
+
+
+
