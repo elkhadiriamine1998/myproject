@@ -1,0 +1,76 @@
+<p>user works!</p>
+<style>
+    /* Add some style to the div element */
+    div {
+      width: 100px;
+      height: 100px;
+      background-color: grey;
+      position: relative;
+      border: rgb(13, 239, 239);
+      color: aliceblue;
+    }
+
+    /* Use the animation property to animate the div */
+    @keyframes example {
+      0%   {left: 50px; top: 0px;}
+      25%  {left: 200px; top: 50px;}
+      50%  {left: 200px; top: 200px;}
+      75%  {left: 50px; top: 200px;}
+      100% {left: 0px; top: 0px;}
+    }
+
+    /* Apply the animation to the div element */
+    div:hover {
+      animation-name: example;
+      animation-duration: 4s;
+      animation-iteration-count: infinite;
+    }
+
+
+    .car {
+      width: 60px;
+      height: 30px;
+      background-color: red;
+      border-radius: 10px 10px 0 0;
+      position: relative;
+    }
+
+    .car:before {
+      content: '';
+      width: 20px;
+      height: 20px;
+      background-color: red;
+      border-radius: 50%;
+      position: absolute;
+      top: -10px;
+      left: 20px;
+    }
+
+    .car:after {
+      content: '';
+      width: 20px;
+      height: 20px;
+      background-color: red;
+      border-radius: 50%;
+      position: absolute;
+      top: -10px;
+      right: 20px;
+    }
+
+    /* Use the animation property to animate the car */
+    @keyframes example {
+      50%   {left: 100px;}
+      0% {left: 100%;}
+    }
+
+    /* Apply the animation to the car */
+    .car {
+      animation-name: example;
+      animation-duration: 5s;
+      animation-iteration-count: infinite;
+    }
+  </style>
+
+<div>Details are Hidden</div>
+<br> <br>
+<div class="car"></div>

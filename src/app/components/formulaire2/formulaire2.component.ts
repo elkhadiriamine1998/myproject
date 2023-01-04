@@ -1,5 +1,6 @@
 import { Component, ElementRef } from '@angular/core';
-import { User } from '../interface/user';
+import { Router } from '@angular/router';
+import { User } from 'src/app/interface/user';
 
 @Component({
   selector: 'app-formulaire2',
@@ -57,6 +58,10 @@ export class Formulaire2Component {
     ]
   }];
 
+  // ici on fait l'injection de dependance du service 
+  // pas besoin de la déclarer
+constructor(private router: Router ){}
+
 
 
 
@@ -69,15 +74,9 @@ export class Formulaire2Component {
     event.preventDefault();
     event.stopPropagation();
   }
-  /*
-  afficheUser(user: User):string{
-    var s:string = "";
-    for (var ele of user) {
-      s += ele; 
-      
-    }
-    return s;
+  
+  goTo(): void {
+    this.router.navigate(["/formulaire"]);
   }
-*/
 
 }

@@ -1,7 +1,45 @@
-<ul>
+<!-- <ul>
     <li> <a routerLink=""> <i>formulaire 2</i> </a> </li>
     <li> <a routerLink="formulaire"> <i>formulaire 1</i></a> </li>
-</ul>
+    <li> <a routerLink="users"> <i>Users</i></a> </li>
+    
+</ul> -->
 
 
-<router-outlet></router-outlet>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">  <b> MENU </b> </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a routerLink=""> <b>formulaire 2</b>  </a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="formulaire"> <b>formulaire 1</b>  </a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="users"><b>Users</b> </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown link
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a >Action</a></li>
+              <li><a >Another action</a></li>
+              <li><a >Something else here</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+<div class="container">
+    <router-outlet></router-outlet>
+</div>
